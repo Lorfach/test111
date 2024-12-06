@@ -19,8 +19,8 @@ console.log('aba');
 
 
 app.get('*', (req, res) => {
-  // res.sendFile(path.join('D:/all/web/new/sliv/ege/index.html', 'index.html'));
-  // console.log(req);
+  res.sendFile(path.join('D:/all/web/new/sliv/ege/', 'index.html'));
+  console.log(req);
   res.status(200).send('abab')
 });
 
