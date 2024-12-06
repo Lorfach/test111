@@ -17,6 +17,6 @@ app.get('*', (req, res) => {
 });
 
 // Запускаем сервер
-app.listen(5000, () => {
+app.listen(8080, () => {
   console.log('Server is running on http://localhost:5000');
 });
