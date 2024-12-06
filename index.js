@@ -1,5 +1,5 @@
 const express = require('express');
-const fs = require('fs');
+// const fs = require('fs');
 const path = require('path');
 const cors = require('cors'); // импортируем cors
 
@@ -8,20 +8,12 @@ const app = express();
 app.use(cors({
   origin: '*' // или '*' для разрешения всех источников
 }));
-
-// app.use(express.json({ limit: "999999mb", extended: true }));
-// app.use(
-//   express.urlencoded({ limit: "999999mb", extended: true, parameterLimit: Infinity })
-// );
-
-// app.use(express.json());
 console.log('aba');
 
+app.use(express.static(path.join(__dirname, 'public')));
 
 app.get('*', (req, res) => {
-  res.sendFile(path.join('D:/all/web/new/sliv/ege/', 'index.html'));
-  console.log(req);
-  res.status(200).send('abab')
+  res.sendFile(path.join(__dirname, 'public', 'index.html'));
 });
 
 // Запускаем сервер
